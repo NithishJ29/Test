@@ -5,6 +5,8 @@ import 'dart:io';
 import 'package:testapp/product_detals.dart';
 import 'package:testapp/cart_screen.dart';
 
+import 'package:testapp/profilepage.dart'; // Import ProfilePage
+
 class HomePage extends StatefulWidget {
   @override
   _HomePageState createState() => _HomePageState();
@@ -79,6 +81,20 @@ class _HomePageState extends State<HomePage> {
                 MaterialPageRoute(
                   builder: (context) =>
                       CartScreen(cartItems: cart), // Pass the cart list
+                ),
+              );
+            },
+          ),
+          // Profile Icon in AppBar
+          IconButton(
+            icon: Icon(Icons.person),
+            onPressed: () {
+              // Navigate to Profile Page
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) =>
+                      ProfilePage(), // Navigate to ProfilePage
                 ),
               );
             },
